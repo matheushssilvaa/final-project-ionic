@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-img src="../../assets/image-card.jpg" alt="logo" class="logo-img"></ion-img>
+    <ion-card-header>
+      <ion-card-title>
+        Entre ou cadastre-se
+      </ion-card-title>
+      <ion-card-subtitle>
+        Digite suas credenciais abaixo ou cadastre-se
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input labelPlacement="floating" [(ngModel)]="login">
+            <div slot="label">Seu email</div>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input labelPlacement="floating" type="password" [(ngModel)]="senha">
+            <div slot="label">Sua senha</div>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-button color="danger" (click)="entrar(login, senha)">Entrar</ion-button>
+        <ion-button color="danger" (click)="irParaCadastro('/cadastro')">Cadastre-se</ion-button>
+      </ion-item>
+      <p>{{nomeUser}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Kitchen Chef Restaurante
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="banner-home">
+    <img alt="Silhouette of mountains" style="width: 90%;" src="./../../assets/image-card.jpg" />
+    <ion-card-header>
+      <ion-row>
+        <ion-button color="danger" routerLink="/login">Login</ion-button>
+        <ion-button fill="outline" class="btn-cadastro" routerLink="/cadastro">Cadastre-se</ion-button>
+      </ion-row>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="home" *ngFor="let item of itensMenu">
+    <ion-icon name={{item.icon}} (click)="navigateFromPage(item.url)"></ion-icon>
+    {{item.nome}}
+  </ion-tab-button>
+</ion-tab-bar>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lanches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="banner">
+    <h1>Principais Lanches</h1>
+  </div>
+  <ion-card *ngFor="let produto of produtos">
+    <ion-row>
+        <img class="img-produto" src={{produto.imagem}} alt="imagem" />
+      <ion-col>
+        <h3>{{produto.nome}}</h3>
+        <span>{{produto.descricao}}</span>
+        <p class="price">{{produto.valor | currency: 'BRL'}}</p>
+        <ion-button color="danger"> <ion-icon name="add-circle" style="margin: 2px;"></ion-icon> Adicionar ao carrinho</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="home" *ngFor="let item of itensMenu">
+    <ion-icon name={{item.icon}} (click)="navigateFromPage(item.url)"></ion-icon>
+    {{item.nome}}
+  </ion-tab-button>
+</ion-tab-bar>
